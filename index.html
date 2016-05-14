@@ -105,7 +105,7 @@
     motion: true,
     duoshuo: {
       userId: 0,
-      author: 'Author'
+      author: '博主'
     }
   };
 </script>
@@ -113,7 +113,7 @@
   <title> RunziiMo Blog </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -170,7 +170,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
           </a>
         </li>
       
@@ -180,7 +180,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -190,7 +190,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
           </a>
         </li>
       
@@ -246,8 +246,8 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
-            <time itemprop="dateCreated" datetime="2016-05-14T21:33:31+08:00" content="2016-05-14">
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T23:03:50+08:00" content="2016-05-14">
               2016-05-14
             </time>
           </span>
@@ -335,6 +335,594 @@
             
               
                 
+                <a class="post-title-link" href="/2016/05/14/Android开发中的unable-to-instantiate-activity-componentinfo问题/" itemprop="url">
+                  Android开发中的unable to instantiate activity componentinfo问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:58:48+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Android开发中的unable to instantiate activity componentinfo问题<br>提前说明：mainfest配置正确，包名也正确。</p>
+<p>问题描述如下：新建带Fragment的工程后，显示导包错误如下</p>
+<p><code>import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;</code></p>
+<p>两个包都出错，将两个jar包添加到buildpath后错误解决。<br>选择Run As Android Application后却报unable to instantiate activity componentinfo 异常</p>
+<p>原因是eclipse解析jar包的时候也会看顺序，只要在Properties–&gt;Java Build Path中将v4和v7两个包的位置提到最上面</p>
+<p><img src="http://img.blog.csdn.net/20150325125159131?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvd2VueW13b3c=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="eclipse截图" title="截图"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/14/之前这个问题也遇到过好几次了，每次都是百度大量资料然后删这删那的解决的。/" itemprop="url">
+                  之前这个问题也遇到过好几次了，每次都是百度大量资料然后删这删那的解决的。
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:58:13+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/14/Android开发之图像局部放大算法/" itemprop="url">
+                  Android开发之图像局部放大算法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:57:24+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Android开发之图像局部放大算法"><a href="#Android开发之图像局部放大算法" class="headerlink" title="Android开发之图像局部放大算法"></a>Android开发之图像局部放大算法</h1><p>前段时间有需求要做一个类似美图秀秀的软件，结果卡在增大眼睛这个功能了，到处搜索，最多只能见到各种论文，最气的是有个家伙声称自己已经实现了该方法，却不愿意贡献出自己的源码，还说他那里不欢迎只会伸手的人，这种没有开源精神的人，迟早会被淘汰！查看了很多论文，终于写出了该方法。</p>
+<hr>
+<h2 id="直接贴出代码，如下"><a href="#直接贴出代码，如下" class="headerlink" title="直接贴出代码，如下"></a>直接贴出代码，如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">public static Bitmap bigEyes(Bitmap bitmap, int PointX, int PointY,</span><br><span class="line">			int Radius, int Strength) &#123;</span><br><span class="line">		int width = bitmap.getWidth();</span><br><span class="line">		int height = bitmap.getHeight();</span><br><span class="line">		// int[] pixNew = new int[width * height];</span><br><span class="line">		// int[] pixOld = new int[width * height];</span><br><span class="line">		int Left = PointX - Radius &lt; 0 ? 0 : PointX - Radius; // 计算边界值</span><br><span class="line">		int Top = PointY - Radius &lt; 0 ? 0 : PointY - Radius;</span><br><span class="line">		int Bottom = PointY + Radius &gt;= height ? height - 1 : PointY + Radius;</span><br><span class="line">		int Right = PointX + Radius &gt;= width ? width - 1 : PointX + Radius;</span><br><span class="line">		Bitmap newBitmap = bitmap.copy(Bitmap.Config.RGB_565, true);</span><br><span class="line">		// bitmap.getPixels(pixNew, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		// bitmap.getPixels(pixOld, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		int PowRadius = Radius * Radius;</span><br><span class="line"></span><br><span class="line">		for (int Y = Top; Y &lt;= Bottom; Y++) &#123;</span><br><span class="line">			int offSetY = Y - PointY;</span><br><span class="line">			for (int X = Left; X &lt;= Right; X++) &#123;</span><br><span class="line">				int offSetX = X - PointX;</span><br><span class="line">				double XY = offSetX * offSetX + offSetY * offSetY;</span><br><span class="line">				if (XY &lt;= PowRadius) &#123;</span><br><span class="line">					double ScaleFactor = 1 - XY / PowRadius;</span><br><span class="line">					ScaleFactor = 1 - (double) Strength / 100 * ScaleFactor; // 按照这种关系计算取样点的位置</span><br><span class="line">					int PosX = (int) (offSetX * ScaleFactor + PointX);</span><br><span class="line">					int PosY = (int) (offSetY * ScaleFactor + PointY);</span><br><span class="line">					if (PosX &lt; 0) &#123; // 放置越界</span><br><span class="line">						PosX = 0;</span><br><span class="line">					&#125; else if (PosX &gt;= width) &#123;</span><br><span class="line">						PosX = width - 1;</span><br><span class="line">					&#125;</span><br><span class="line">					if (PosY &lt; 0) &#123;</span><br><span class="line">						PosY = 0;</span><br><span class="line">					&#125; else if (PosY &gt;= height) &#123;</span><br><span class="line">						PosY = height - 1;</span><br><span class="line">					&#125;</span><br><span class="line">					// int Speed = Y * width + X;</span><br><span class="line">					// int Index = PosY * width + PosX;</span><br><span class="line">					newBitmap.setPixel(X, Y, bitmap.getPixel(PosX, PosY));</span><br><span class="line">					// pixNew[Speed] = pixOld[Index];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// bitmap.setPixels(pixNew, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		return newBitmap;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>应该很明了了，就不做注释了，这还要注释就是真正的伸手党了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/14/Androidk开发之图像局部扭曲算法（瘦脸算法）/" itemprop="url">
+                  Androidk开发之图像局部扭曲算法（瘦脸算法）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:56:11+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Androidk开发之图像局部扭曲算法（瘦脸算法）"><a href="#Androidk开发之图像局部扭曲算法（瘦脸算法）" class="headerlink" title="Androidk开发之图像局部扭曲算法（瘦脸算法）"></a>Androidk开发之图像局部扭曲算法（瘦脸算法）</h1><p>和之前的相同，这次是图像局部扭曲算法，参照的文章是浙江某所大学两个教授的论文，具体是哪个忘了，弄了一整天，搞出来了。这个算法还不够严谨，主要处理大图片时效率不高，算法本来就不是我喜欢的，有能力的同学可以优化下，别忘了在回复里贴上。</p>
+<hr>
+<h2 id="直接贴出代码，如下"><a href="#直接贴出代码，如下" class="headerlink" title="直接贴出代码，如下"></a>直接贴出代码，如下</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">public static Bitmap smallFace(Bitmap bitmap, int tempX, int tempY,</span><br><span class="line">			int PointX, int PointY, int Radius) &#123;</span><br><span class="line">		int width = bitmap.getWidth();</span><br><span class="line">		int height = bitmap.getHeight();</span><br><span class="line">		// int[] pixNew = new int[width * height];</span><br><span class="line">		// int[] pixOld = new int[width * height];</span><br><span class="line">		int Left = tempX - Radius &lt; 0 ? 0 : tempX - Radius; // 计算边界值</span><br><span class="line">		int Top = tempY - Radius &lt; 0 ? 0 : tempY - Radius;</span><br><span class="line">		int Bottom = tempY + Radius &gt;= height ? height - 1 : tempY + Radius;</span><br><span class="line">		int Right = tempX + Radius &gt;= width ? width - 1 : tempX + Radius;</span><br><span class="line">		Bitmap newBitmap = bitmap.copy(Bitmap.Config.RGB_565, true);</span><br><span class="line">		// bitmap.getPixels(pixNew, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		// bitmap.getPixels(pixOld, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		int disX = PointX - tempX;</span><br><span class="line">		int disY = PointY - tempY;</span><br><span class="line">		int PowRadius = Radius * Radius;</span><br><span class="line">		int distance = disY * disY + disX * disX;</span><br><span class="line">		if (distance &gt; Radius * Radius / 4)</span><br><span class="line">			return newBitmap;</span><br><span class="line"></span><br><span class="line">		for (int Y = Top; Y &lt;= Bottom; Y++) &#123;</span><br><span class="line">			int offSetY = Y - PointY;</span><br><span class="line">			for (int X = Left; X &lt;= Right; X++) &#123;</span><br><span class="line">				int offSetX = X - PointX;</span><br><span class="line">				double XY = offSetX * offSetX + offSetY * offSetY;</span><br><span class="line">				int PosX = (int) (X + disX * B(XY / PowRadius));</span><br><span class="line">				int PosY = (int) (Y + disY * B(XY / PowRadius));</span><br><span class="line">				if (PosX &lt; 0) &#123; // 放置越界</span><br><span class="line">					PosX = 0;</span><br><span class="line">				&#125; else if (PosX &gt;= width) &#123;</span><br><span class="line">					PosX = width - 1;</span><br><span class="line">				&#125;</span><br><span class="line">				if (PosY &lt; 0) &#123;</span><br><span class="line">					PosY = 0;</span><br><span class="line">				&#125; else if (PosY &gt;= height) &#123;</span><br><span class="line">					PosY = height - 1;</span><br><span class="line">				&#125;</span><br><span class="line">				// int Speed = Y * width + X;</span><br><span class="line">				// int Index = PosY * width + PosX;</span><br><span class="line">				newBitmap.setPixel(X, Y, bitmap.getPixel(PosX, PosY));</span><br><span class="line">				// pixNew[Speed] = pixOld[Index];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		// bitmap.setPixels(pixNew, Top * width + Left, width, Left, Top,</span><br><span class="line">		// Radius * 2, Radius * 2);</span><br><span class="line">		return newBitmap;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>不做注释了，这还要注释就是真正的伸手党了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/14/解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题/" itemprop="url">
+                  解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:55:08+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>笔者最近的Android项目要用到PagerSlidingTabStrip和ViewPager的组合，但是从github上下载源码后顺利运行示例项目，用到自己的项目后发现一个问题，就是第二次进入该ViewPager所在Fragment后PagerSlidingTabStrip载入正常，但是ViewPager不显示内容，为一片空白。于是追踪代码，发现ViewPager的子Fragment的onCreatView方法未被调用，于是怀疑在替ViewPager设置Adapter的环节出了问题。</p>
+<hr>
+<p><em>以下是我第一次的Adapter代码</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class MyPagerAdapter extends FragmentPagerAdapter &#123;</span><br><span class="line"></span><br><span class="line">		private final String[] TITLES = &#123; &quot;外卖订单&quot;, &quot;快递订单&quot; &#125;;</span><br><span class="line"></span><br><span class="line">		public MyPagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">			super(fm);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public CharSequence getPageTitle(int position) &#123;</span><br><span class="line">			return TITLES[position];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public int getCount() &#123;</span><br><span class="line">			return TITLES.length;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public Fragment getItem(int position) &#123;</span><br><span class="line">			return OrderListFragment.newInstance(position);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>经过各种搜索后发现继承的Adapter不对，将FragmentPagerAdapter改为FragmentStatePagerAdapter后第二次进入就能正常加载Fragment内容了。</p>
+<hr>
+<p><em>之后的代码</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class MyPagerAdapter extends FragmentStatePagerAdapter &#123;</span><br><span class="line"></span><br><span class="line">		private final String[] TITLES = &#123; &quot;外卖订单&quot;, &quot;快递订单&quot; &#125;;</span><br><span class="line"></span><br><span class="line">		public MyPagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">			super(fm);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public CharSequence getPageTitle(int position) &#123;</span><br><span class="line">			return TITLES[position];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public int getCount() &#123;</span><br><span class="line">			return TITLES.length;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public Fragment getItem(int position) &#123;</span><br><span class="line">			return OrderListFragment.newInstance(position);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>笔者也是第一次用ViewPager，对于机制什么的也不太熟悉，希望能帮到也出现这个问题的人。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/14/Android网络编程中关于AsyncHttpClient获取cookie的问题/" itemprop="url">
+                  Android网络编程中关于AsyncHttpClient获取cookie的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-14T22:52:22+08:00" content="2016-05-14">
+              2016-05-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前的项目登录模块存在问题，登录状态和用户名直接存在了SharedPreferences里，进入软件时直接判断用户名是否为空，为空时才进入登录页面，否则直接读取SP中的相关数据，看了<a href="http://loopj.com/android-async-http/doc/" title="AsyncHttpClient的文档" target="_blank" rel="external">AsyncHttpClient的文档</a>后，才发现可以允许读取cookie。<br>只要在实例化AsyncHttpClient时加上以下代码即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">httpClient = new AsyncHttpClient();</span><br><span class="line">PersistentCookieStore cookieStore = new PersistentCookieStore(context);</span><br><span class="line">httpClient.setCookieStore(cookieStore);</span><br></pre></td></tr></table></figure>
+<p>PersistentCookieStore类是该支持包提供的类，其中有getCookies()方法，该方法返回一个org.apache.http.cookie.Cookie接口。想要查看当前所有Cookie内容，只要使用以下代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PersistentCookieStore myCookieStore = new PersistentCookieStore(context);</span><br><span class="line">List&lt;Cookie&gt; cookies = myCookieStore.getCookies();</span><br><span class="line">for (Cookie cookie : cookies) &#123;</span><br><span class="line">	Log.d(&quot;Cookie&quot;,cookie.getName() + &quot; = &quot; + cookie.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，cookie内容可以被设置成header用于登录获取用户信息等验证，每次调用这些API接口就再也不用傻逼兮兮的加上username,password等验证了。<br>这就交给后端同学去做了，Android同学安心的开发你的app吧。再也不用关心验证等问题了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/25/resume/" itemprop="url">
                   resume
                 </a>
@@ -348,7 +936,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-04-25T00:53:49+08:00" content="2016-04-25">
               2016-04-25
             </time>
@@ -441,7 +1029,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">发表于</span>
             <time itemprop="dateCreated" datetime="2016-04-24T23:25:04+08:00" content="2016-04-24">
               2016-04-24
             </time>
@@ -533,7 +1121,7 @@
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="http://o76845j6w.bkt.clouddn.com/T1EFpyFidaXXXXXXXX_%21%210-item_pic.jpg"
                alt="RunziiMo" />
           <p class="site-author-name" itemprop="name">RunziiMo</p>
           <p class="site-description motion-element" itemprop="description"></p>
@@ -541,8 +1129,8 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
@@ -589,11 +1177,11 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="http://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>

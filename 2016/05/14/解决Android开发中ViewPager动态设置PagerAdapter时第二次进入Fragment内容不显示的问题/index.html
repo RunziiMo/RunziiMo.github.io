@@ -84,16 +84,16 @@
 
 
 
-<meta name="description">
+<meta name="description" content="问题描述笔者最近的Android项目要用到PagerSlidingTabStrip和ViewPager的组合，但是从github上下载源码后顺利运行示例项目，用到自己的项目后发现一个问题，就是第二次进入该ViewPager所在Fragment后PagerSlidingTabStrip载入正常，但是ViewPager不显示内容，为一片空白。于是追踪代码，发现ViewPager的子Fragment的o">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/04/24/Hello-World/index.html">
+<meta property="og:title" content="解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题">
+<meta property="og:url" content="http://yoursite.com/2016/05/14/解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题/index.html">
 <meta property="og:site_name" content="RunziiMo Blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-24T15:25:04.000Z">
+<meta property="og:description" content="问题描述笔者最近的Android项目要用到PagerSlidingTabStrip和ViewPager的组合，但是从github上下载源码后顺利运行示例项目，用到自己的项目后发现一个问题，就是第二次进入该ViewPager所在Fragment后PagerSlidingTabStrip载入正常，但是ViewPager不显示内容，为一片空白。于是追踪代码，发现ViewPager的子Fragment的o">
+<meta property="og:updated_time" content="2016-05-14T14:55:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description">
+<meta name="twitter:title" content="解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题">
+<meta name="twitter:description" content="问题描述笔者最近的Android项目要用到PagerSlidingTabStrip和ViewPager的组合，但是从github上下载源码后顺利运行示例项目，用到自己的项目后发现一个问题，就是第二次进入该ViewPager所在Fragment后PagerSlidingTabStrip载入正常，但是ViewPager不显示内容，为一片空白。于是追踪代码，发现ViewPager的子Fragment的o">
 
 
 
@@ -111,7 +111,7 @@
   };
 </script>
 
-  <title> Hello World | RunziiMo Blog </title>
+  <title> 解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题 | RunziiMo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -231,7 +231,7 @@
             
             
               
-                Hello World
+                解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题
               
             
           </h1>
@@ -243,8 +243,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T23:25:04+08:00" content="2016-04-24">
-              2016-04-24
+            <time itemprop="dateCreated" datetime="2016-05-14T22:55:08+08:00" content="2016-05-14">
+              2016-05-14
             </time>
           </span>
 
@@ -271,7 +271,17 @@
       
 
       
-        
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>笔者最近的Android项目要用到PagerSlidingTabStrip和ViewPager的组合，但是从github上下载源码后顺利运行示例项目，用到自己的项目后发现一个问题，就是第二次进入该ViewPager所在Fragment后PagerSlidingTabStrip载入正常，但是ViewPager不显示内容，为一片空白。于是追踪代码，发现ViewPager的子Fragment的onCreatView方法未被调用，于是怀疑在替ViewPager设置Adapter的环节出了问题。</p>
+<hr>
+<p><em>以下是我第一次的Adapter代码</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class MyPagerAdapter extends FragmentPagerAdapter &#123;</span><br><span class="line"></span><br><span class="line">		private final String[] TITLES = &#123; &quot;外卖订单&quot;, &quot;快递订单&quot; &#125;;</span><br><span class="line"></span><br><span class="line">		public MyPagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">			super(fm);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public CharSequence getPageTitle(int position) &#123;</span><br><span class="line">			return TITLES[position];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public int getCount() &#123;</span><br><span class="line">			return TITLES.length;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public Fragment getItem(int position) &#123;</span><br><span class="line">			return OrderListFragment.newInstance(position);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>经过各种搜索后发现继承的Adapter不对，将FragmentPagerAdapter改为FragmentStatePagerAdapter后第二次进入就能正常加载Fragment内容了。</p>
+<hr>
+<p><em>之后的代码</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">public class MyPagerAdapter extends FragmentStatePagerAdapter &#123;</span><br><span class="line"></span><br><span class="line">		private final String[] TITLES = &#123; &quot;外卖订单&quot;, &quot;快递订单&quot; &#125;;</span><br><span class="line"></span><br><span class="line">		public MyPagerAdapter(FragmentManager fm) &#123;</span><br><span class="line">			super(fm);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public CharSequence getPageTitle(int position) &#123;</span><br><span class="line">			return TITLES[position];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public int getCount() &#123;</span><br><span class="line">			return TITLES.length;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		@Override</span><br><span class="line">		public Fragment getItem(int position) &#123;</span><br><span class="line">			return OrderListFragment.newInstance(position);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>笔者也是第一次用ViewPager，对于机制什么的也不太熟悉，希望能帮到也出现这个问题的人。</p>
+
       
     </div>
 
@@ -295,12 +305,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/14/Android网络编程中关于AsyncHttpClient获取cookie的问题/" rel="next" title="Android网络编程中关于AsyncHttpClient获取cookie的问题">
+                <i class="fa fa-chevron-left"></i> Android网络编程中关于AsyncHttpClient获取cookie的问题
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/25/resume/" rel="prev" title="resume">
-                resume <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/14/Androidk开发之图像局部扭曲算法（瘦脸算法）/" rel="prev" title="Androidk开发之图像局部扭曲算法（瘦脸算法）">
+                Androidk开发之图像局部扭曲算法（瘦脸算法） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -401,7 +415,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li></ol></div>
             
           </div>
         </section>

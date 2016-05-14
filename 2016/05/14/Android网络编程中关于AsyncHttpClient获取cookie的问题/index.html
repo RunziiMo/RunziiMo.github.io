@@ -84,16 +84,19 @@
 
 
 
-<meta name="description">
+<meta name="description" content="之前的项目登录模块存在问题，登录状态和用户名直接存在了SharedPreferences里，进入软件时直接判断用户名是否为空，为空时才进入登录页面，否则直接读取SP中的相关数据，看了AsyncHttpClient的文档后，才发现可以允许读取cookie。只要在实例化AsyncHttpClient时加上以下代码即可。
+123httpClient = new AsyncHttpClient();Per">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/04/24/Hello-World/index.html">
+<meta property="og:title" content="Android网络编程中关于AsyncHttpClient获取cookie的问题">
+<meta property="og:url" content="http://yoursite.com/2016/05/14/Android网络编程中关于AsyncHttpClient获取cookie的问题/index.html">
 <meta property="og:site_name" content="RunziiMo Blog">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-24T15:25:04.000Z">
+<meta property="og:description" content="之前的项目登录模块存在问题，登录状态和用户名直接存在了SharedPreferences里，进入软件时直接判断用户名是否为空，为空时才进入登录页面，否则直接读取SP中的相关数据，看了AsyncHttpClient的文档后，才发现可以允许读取cookie。只要在实例化AsyncHttpClient时加上以下代码即可。
+123httpClient = new AsyncHttpClient();Per">
+<meta property="og:updated_time" content="2016-05-14T14:53:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Android网络编程中关于AsyncHttpClient获取cookie的问题">
+<meta name="twitter:description" content="之前的项目登录模块存在问题，登录状态和用户名直接存在了SharedPreferences里，进入软件时直接判断用户名是否为空，为空时才进入登录页面，否则直接读取SP中的相关数据，看了AsyncHttpClient的文档后，才发现可以允许读取cookie。只要在实例化AsyncHttpClient时加上以下代码即可。
+123httpClient = new AsyncHttpClient();Per">
 
 
 
@@ -111,7 +114,7 @@
   };
 </script>
 
-  <title> Hello World | RunziiMo Blog </title>
+  <title> Android网络编程中关于AsyncHttpClient获取cookie的问题 | RunziiMo Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -231,7 +234,7 @@
             
             
               
-                Hello World
+                Android网络编程中关于AsyncHttpClient获取cookie的问题
               
             
           </h1>
@@ -243,8 +246,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-24T23:25:04+08:00" content="2016-04-24">
-              2016-04-24
+            <time itemprop="dateCreated" datetime="2016-05-14T22:52:22+08:00" content="2016-05-14">
+              2016-05-14
             </time>
           </span>
 
@@ -271,7 +274,12 @@
       
 
       
-        
+        <p>之前的项目登录模块存在问题，登录状态和用户名直接存在了SharedPreferences里，进入软件时直接判断用户名是否为空，为空时才进入登录页面，否则直接读取SP中的相关数据，看了<a href="http://loopj.com/android-async-http/doc/" title="AsyncHttpClient的文档" target="_blank" rel="external">AsyncHttpClient的文档</a>后，才发现可以允许读取cookie。<br>只要在实例化AsyncHttpClient时加上以下代码即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">httpClient = new AsyncHttpClient();</span><br><span class="line">PersistentCookieStore cookieStore = new PersistentCookieStore(context);</span><br><span class="line">httpClient.setCookieStore(cookieStore);</span><br></pre></td></tr></table></figure>
+<p>PersistentCookieStore类是该支持包提供的类，其中有getCookies()方法，该方法返回一个org.apache.http.cookie.Cookie接口。想要查看当前所有Cookie内容，只要使用以下代码。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PersistentCookieStore myCookieStore = new PersistentCookieStore(context);</span><br><span class="line">List&lt;Cookie&gt; cookies = myCookieStore.getCookies();</span><br><span class="line">for (Cookie cookie : cookies) &#123;</span><br><span class="line">	Log.d(&quot;Cookie&quot;,cookie.getName() + &quot; = &quot; + cookie.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，cookie内容可以被设置成header用于登录获取用户信息等验证，每次调用这些API接口就再也不用傻逼兮兮的加上username,password等验证了。<br>这就交给后端同学去做了，Android同学安心的开发你的app吧。再也不用关心验证等问题了。</p>
+
       
     </div>
 
@@ -295,12 +303,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/04/25/resume/" rel="next" title="resume">
+                <i class="fa fa-chevron-left"></i> resume
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/25/resume/" rel="prev" title="resume">
-                resume <i class="fa fa-chevron-right"></i>
+              <a href="/2016/05/14/解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题/" rel="prev" title="解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题">
+                解决Android开发中ViewPager动态设置PagerAdapter时第二次进入Fragment内容不显示的问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
